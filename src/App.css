@@ -1,1 +1,46 @@
+.main-text {
+  color: rgb(230, 130, 0);
+}
 
+/* common button style */
+
+.btn-main {
+  background-color: rgb(230, 130, 0);
+  padding: 0.4em 1.5em;
+  color: #ffffff;
+  font-size: 1.2em;
+  border: 2px solid rgb(230, 130, 0);
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.btn-main:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(230, 130, 0);
+}
+.second-btn {
+  background-color: rgb(255, 255, 255);
+  padding: 0.4em 1em;
+  border: 2px solid rgb(230, 130, 0);
+  color: rgb(230, 130, 0);
+  font-size: 1em;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.second-btn:hover {
+  background-color: rgb(230, 130, 0);
+  text-decoration: none;
+  color: #ffffff;
+}

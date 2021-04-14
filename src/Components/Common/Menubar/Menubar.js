@@ -1,41 +1,30 @@
 import React from "react";
+import "./Menubar.css";
+import { Link } from "react-router-dom";
+import { Nav, Navbar } from "react-bootstrap";
 
 const Menubar = () => {
   return (
     <div>
-      <h2>This is menubar</h2>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Navbar
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <Navbar expand="lg" className="menubar fixed-top">
+        <Navbar.Brand to="/" className="text-light">
+          React-Bootstrap
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Link to="/" className="text-light nav-link">
+              Home
+            </Link>
+            <Link to="/service" className="text-light nav-link">
+              Service
+            </Link>
+            <Link className="text-light nav-link">About</Link>
+            <Link className="text-light nav-link">Blog</Link>
+            <Link className="btn-main">Search</Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </div>
   );
 };

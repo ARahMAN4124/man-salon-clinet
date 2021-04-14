@@ -1,0 +1,11 @@
+.homeHeader {
+  height: auto;
+  background-image: linear-gradient(
+      rgba(41, 41, 41, 0.712),
+      rgba(41, 41, 41, 0.712)
+    ),
+    url(../../../image/pexels-photo-1813272.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

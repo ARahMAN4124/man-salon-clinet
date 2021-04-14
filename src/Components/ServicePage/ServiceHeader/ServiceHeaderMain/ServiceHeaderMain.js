@@ -1,11 +1,17 @@
 import React from "react";
-import "./HeaderMain.css";
-import { Link } from "react-router-dom";
-import homeHeaderImg from "../../../../image/pexels-photo-3998421.jpeg";
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
-const HeaderMain = () => {
+const ServiceHeaderMain = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+  console.log("selected", selectedDate);
   return (
-    <header className="homeHeader py-5">
+    <header className="serviceHeaderMain py-5">
       <div className="container-fluid">
         <div className="row mx-5 d-flex align-items-center">
           <div className="col-md-6">
@@ -20,11 +26,10 @@ const HeaderMain = () => {
               laboriosam dolor dolorem ipsa hic quae doloremque incidunt
               perspiciatis.
             </p>
-            <Link className="btn-main">Booking Now</Link>
           </div>
           <div className="col-md-6">
             <div className="mt-5">
-              <img src={homeHeaderImg} className="img-fluid rounded" alt="" />
+              <Calendar onChange={handleDateChange} value={new Date()} />
             </div>
           </div>
         </div>
@@ -33,4 +38,4 @@ const HeaderMain = () => {
   );
 };
 
-export default HeaderMain;
+export default ServiceHeaderMain;
