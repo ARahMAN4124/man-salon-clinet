@@ -4,7 +4,7 @@ const BlogCard = ({ blog }) => {
   const { title, img, description, date } = blog;
   return (
     <div className="col-md-4">
-      <div className="blogCard">
+      <div className="blogCard mb-4">
         <div>
           <img
             src={img}

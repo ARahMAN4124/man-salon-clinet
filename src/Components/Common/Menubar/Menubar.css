@@ -1,3 +1,16 @@
 .menubar {
   background-color: rgb(41, 41, 41);
 }
+.logInUserImg {
+  border: 2px solid rgb(230, 130, 0);
+  width: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.logInUserImg img {
+  width: 100%;
+  border-radius: 50%;
+}

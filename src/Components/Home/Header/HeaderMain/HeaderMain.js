@@ -20,7 +20,9 @@ const HeaderMain = () => {
               laboriosam dolor dolorem ipsa hic quae doloremque incidunt
               perspiciatis.
             </p>
-            <Link className="btn-main">Booking Now</Link>
+            <Link to="/service" className="btn-main">
+              Booking Now
+            </Link>
           </div>
           <div className="col-md-6">
             <div className="mt-5">

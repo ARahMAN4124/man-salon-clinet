@@ -10,7 +10,9 @@ const ServiceCard = ({ service }) => {
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>
-          <Link className="second-btn">Get Now</Link>
+          <Link to="/service" className="second-btn">
+            Get Now
+          </Link>
         </div>
       </div>
     </div>

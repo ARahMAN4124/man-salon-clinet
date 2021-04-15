@@ -9,14 +9,13 @@ const ServiceHeaderMain = () => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-  console.log("selected", selectedDate);
   return (
     <header className="serviceHeaderMain py-5">
       <div className="container-fluid">
         <div className="row mx-5 d-flex align-items-center">
           <div className="col-md-6">
             <h1 className="main-text display-4" style={{ fontFamily: "Times" }}>
-              Enjoy the highest Quality of man's Grooming
+              You Can Rely on US
             </h1>
             <p className="text-light">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
