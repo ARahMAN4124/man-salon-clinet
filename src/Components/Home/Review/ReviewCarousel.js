@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 const ReviewCarousel = ({ testimonialInfo }) => {
   const { description, img, rating, name } = testimonialInfo;
   return (
-    <div className="col-md-4 my-3">
+    <div className="col-md-6 my-3">
       <div className="testimonialCard d-flex ">
         <div className="mx-2">
           <img
