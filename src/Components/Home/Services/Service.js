@@ -1,6 +1,7 @@
 import React from "react";
 import "./Service.css";
 import ServiceCard from "./ServiceCard";
+import devider from "../../../image/icons8-hercule-poirot-mustache-80.png";
 
 const Service = () => {
   const service = [
@@ -44,12 +45,20 @@ const Service = () => {
   return (
     <section className="service py-5">
       <div className="container">
-        <h2
-          className="text-center display-4 main-text"
-          style={{ fontFamily: "Times" }}
-        >
-          Services
-        </h2>
+        <div className="text-center">
+          <h2
+            className=" display-4 m-0 p-0  main-text"
+            style={{ fontFamily: "Times" }}
+          >
+            Services
+          </h2>
+          {/* <img
+            className="m-0 p-0 img-fluid"
+            style={{ width: "120px" }}
+            src={devider}
+            alt=""
+          /> */}
+        </div>
         <div className="row pt-5">
           {service.map((service, index) => (
             <ServiceCard service={service} key={index + 1}></ServiceCard>

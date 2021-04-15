@@ -6,6 +6,9 @@ import LogIn from "./Components/LogIn/LogIn/LogIn";
 import { createContext, useState } from "react";
 import PrivateRoute from "./Components/LogIn/PrivateRoute/PrivateRoute";
 import Dashboard from "./Components/Dasboard/UserDashboard/UserDashborad";
+import UserReview from "./Components/Dasboard/UserDashboard/UserReview/UserReview";
+import AdminDashBoard from "./Components/Dasboard/AdminDashboard/AddAmin/AdminDashBoard";
+import AddAdmin from "./Components/Dasboard/AdminDashboard/AddAmin/AddAdmin";
 
 export const myContext = createContext();
 
@@ -26,6 +29,15 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route path="/review">
+            <UserReview />
+          </Route>
+          <Route path="/adminDashboard">
+            <AdminDashBoard />
+          </Route>
+          <Route path="/addAdmin">
+            <AddAdmin />
           </Route>
         </Switch>
       </Router>

@@ -1,0 +1,20 @@
+.teamMainImg {
+  width: 400px;
+  height: 400px;
+  border: 4px dotted rgb(230, 130, 0);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.teamCardImg {
+  width: 120px;
+  height: 100px;
+  border: 4px dotted rgb(230, 130, 0);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}

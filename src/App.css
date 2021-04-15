@@ -9,6 +9,7 @@
   padding: 0.4em 1.5em;
   color: #ffffff;
   font-size: 1.2em;
+  outline: none;
   border: 2px solid rgb(230, 130, 0);
   transition: all 0.3s ease-in-out;
   border-radius: 10px;
@@ -24,6 +25,7 @@
 .btn-main:hover {
   background-color: transparent;
   text-decoration: none;
+  outline: none;
   color: rgb(230, 130, 0);
 }
 .second-btn {

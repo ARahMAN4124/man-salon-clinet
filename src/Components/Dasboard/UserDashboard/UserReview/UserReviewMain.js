@@ -1,12 +1,10 @@
 import React from "react";
 import { useContext } from "react";
 import { myContext } from "../../../../App";
-import "./DashboardMain.css";
-import BookingForm from "./BookingForm";
+import ReviewForm from "./ReviewForm";
 
-const DashboardMain = () => {
+const UserReviewMain = () => {
   const [logInUser, setLogInUser] = useContext(myContext);
-
   return (
     <main className="dashboardMain">
       <div className="dashboardMenu d-flex justify-content-between">
@@ -18,10 +16,10 @@ const DashboardMain = () => {
         </div>
       </div>
       <div>
-        <BookingForm />
+        <ReviewForm />
       </div>
     </main>
   );
 };
 
-export default DashboardMain;
+export default UserReviewMain;

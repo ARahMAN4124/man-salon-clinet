@@ -11,17 +11,44 @@ const Sidebar = () => {
           <img src={logo} alt="" />
         </Link>
       </div>
-      <ul className="nav flex-column pt-2 pl-5">
-        <li className="nav-item pt-2">
-          <Link className="nav-link text-light">Book</Link>
-        </li>
+      <div>
+        <ul className="nav flex-column pt-2 pl-5">
+          <li className="nav-item pt-2">
+            <Link className="nav-link text-light">Book</Link>
+          </li>
 
-        <li className="nav-item pt-2">
-          <Link className="nav-link text-light">Booking List</Link>
-        </li>
-        <li className="nav-item pt-2">
-          <Link className="nav-link text-light">Review</Link>
-        </li>
+          <li className="nav-item pt-2">
+            <Link className="nav-link text-light">Booking List</Link>
+          </li>
+          <li className="nav-item pt-2">
+            <Link to="/review" className="nav-link text-light">
+              Review
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul className="nav flex-column pt-2 pl-5">
+          <li className="nav-item pt-2">
+            <Link className="nav-link text-light">Order List</Link>
+          </li>
+
+          <li className="nav-item pt-2">
+            <Link to="/adminDashboard" className="nav-link text-light">
+              Add Service
+            </Link>
+          </li>
+          <li className="nav-item pt-2">
+            <Link to="/addAdmin" className="nav-link text-light">
+              Make Admin
+            </Link>
+          </li>
+          <li className="nav-item pt-2">
+            <Link className="nav-link text-light">Manage Services</Link>
+          </li>
+        </ul>
+      </div>
+      <ul className='className="nav flex-column pt-2 pl-5"'>
         <li className="nav-item pt-2">
           <Link to="/" className="nav-link text-light">
             Go Home
