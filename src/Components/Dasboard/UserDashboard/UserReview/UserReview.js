@@ -1,6 +1,5 @@
 import React from "react";
-import Sidebar from "../../Sidebar/Sidebar";
-import DashboardMain from "../DashboardMain/DashboardMain";
+import Sidebar from "../../../Common/Sidebar/Sidebar";
 import UserReviewMain from "./UserReviewMain";
 
 const UserReview = () => {

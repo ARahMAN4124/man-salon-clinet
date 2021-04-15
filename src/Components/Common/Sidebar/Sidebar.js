@@ -7,14 +7,16 @@ const Sidebar = () => {
   return (
     <section className="sidebar">
       <div className="d-flex justify-content-center">
-        <Link className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           <img src={logo} alt="" />
         </Link>
       </div>
       <div>
         <ul className="nav flex-column pt-2 pl-5">
           <li className="nav-item pt-2">
-            <Link className="nav-link text-light">Book</Link>
+            <Link to="/dashboard" className="nav-link text-light">
+              Book
+            </Link>
           </li>
 
           <li className="nav-item pt-2">
@@ -48,7 +50,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <ul className='className="nav flex-column pt-2 pl-5"'>
+      <ul className="nav flex-column pt-2 pl-5">
         <li className="nav-item pt-2">
           <Link to="/" className="nav-link text-light">
             Go Home

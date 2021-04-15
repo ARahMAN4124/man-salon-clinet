@@ -1,16 +1,55 @@
+import axios from "axios";
 import React from "react";
+import { useState } from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { myContext } from "../../../../App";
 
 const AddServiceForm = () => {
+  const [logInUser, setLonInUser] = useContext(myContext);
+  const [imgUrl, setImgUrl] = useState("");
+
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
+
+  const handleServiceImg = (e) => {
+    const imgData = new FormData();
+    imgData.append("key", "de72c60033d44091a0d2c4e2010d3736");
+    imgData.append("image", e.target.files[0]);
+
+    axios
+      .post("https://api.imgbb.com/1/upload", imgData)
+      .then(function (response) {
+        setImgUrl(response.data.data.url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   const onSubmit = (data) => {
-    console.log(data);
-    alert("Your Service Added Successfully");
+    const serviceInfo = {
+      adminName: logInUser.displayName,
+      title: data.title,
+      ServiceImg: imgUrl,
+      price: data.price,
+      description: data.description,
+    };
+
+    fetch("http://localhost:5050/addService", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ serviceInfo }),
+    }).then((res) => {
+      if (res) {
+        alert("Your Service Added Successfully");
+      }
+    });
   };
   return (
     <div className="dashboardOther row">
@@ -44,13 +83,10 @@ const AddServiceForm = () => {
             <div className="col-3">
               <label htmlFor="">Image</label>
               <input
-                {...register("img", { required: true })}
+                onChange={handleServiceImg}
                 className="form-control"
                 type="file"
               />
-              {errors.img && (
-                <span className="text-danger">This field is required</span>
-              )}
             </div>
           </div>
           <div className="mb-3">
@@ -64,7 +100,12 @@ const AddServiceForm = () => {
             {errors.description && <span>This field is required</span>}
           </div>
           <div className="text-right">
-            <input type="submit" value="SUBMIT" className="btn-main mr-auto" />
+            <input
+              disabled={!imgUrl}
+              type="submit"
+              value="SUBMIT"
+              className="btn btn-warning"
+            />
           </div>
         </form>
       </div>

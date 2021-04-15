@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BlogCard = ({ blog }) => {
   const { title, img, description, date } = blog;
@@ -16,6 +17,7 @@ const BlogCard = ({ blog }) => {
         <small>bt admin /{date}</small>
         <h4> {title}</h4>
         <p className="text-secondary">{description}</p>
+        <Link>Read More</Link>
       </div>
     </div>
   );

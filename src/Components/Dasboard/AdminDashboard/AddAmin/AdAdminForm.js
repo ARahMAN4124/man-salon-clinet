@@ -5,10 +5,19 @@ const AdAdminForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    fetch("http://localhost:5050/addAdmin", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ data }),
+    }).then((res) => {
+      console.log(res);
+    });
+
     console.log(data);
     alert("A Admin Added Successfully");
   };
@@ -19,12 +28,12 @@ const AdAdminForm = () => {
           <div className="form-group row">
             <div className="col-8">
               <input
-                {...register("title", { required: true })}
+                {...register("Email", { required: true })}
                 className="form-control"
                 placeholder="Enter Email"
                 type="email"
               />
-              {errors.title && (
+              {errors.Email && (
                 <span className="text-danger">This field is required</span>
               )}
             </div>

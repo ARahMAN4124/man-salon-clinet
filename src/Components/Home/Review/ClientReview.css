@@ -1,0 +1,11 @@
+.testimonial {
+  background-image: linear-gradient(
+      rgba(41, 41, 41, 0.712),
+      rgba(41, 41, 41, 0.712)
+    ),
+    url(../../../image/1f0ce532510765.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Components/Home/Home/Home";
 import ServicePage from "./Components/ServicePage/Service/ServicePage";
 import LogIn from "./Components/LogIn/LogIn/LogIn";
@@ -27,18 +27,18 @@ function App() {
           <Route path="/logIn">
             <LogIn />
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard />
-          </Route>
-          <Route path="/review">
+          </PrivateRoute>
+          <PrivateRoute path="/review">
             <UserReview />
-          </Route>
-          <Route path="/adminDashboard">
+          </PrivateRoute>
+          <PrivateRoute path="/adminDashboard">
             <AdminDashBoard />
-          </Route>
-          <Route path="/addAdmin">
+          </PrivateRoute>
+          <PrivateRoute path="/addAdmin">
             <AddAdmin />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
     </myContext.Provider>

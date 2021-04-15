@@ -31,13 +31,12 @@ const OurTeam = () => {
     },
   ];
   const [teamMember, setTeamMember] = useState(team[0]);
-  console.log(team[0]);
   const handleTeamMember = (member) => {
     setTeamMember(member);
   };
 
   return (
-    <section className="team.Member py-3 about-bg">
+    <section className="team.Member py-3 pb-5 about-bg">
       <div className="container">
         <h2
           className="text-center display-4 main-text py-5"
@@ -59,8 +58,9 @@ const OurTeam = () => {
             <p className="main-text">-{teamMember.rule}</p>
             <p className="text-secondary">{teamMember.describe}</p>
             <div className="row">
-              {team.map((teamMember) => (
+              {team.map((teamMember, index) => (
                 <TeamMembers
+                  key={index + 1}
                   teamMember={teamMember}
                   handleTeamMember={handleTeamMember}
                 />

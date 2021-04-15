@@ -9,7 +9,7 @@ const UserReviewMain = () => {
     <main className="dashboardMain">
       <div className="dashboardMenu d-flex justify-content-between">
         <div>
-          <h2>Booking</h2>
+          <h2>Add Review</h2>
         </div>
         <div className="logInUserImg mr-5">
           <img src={logInUser.photoURL} alt="" />
