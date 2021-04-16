@@ -1,4 +1,5 @@
 import React from "react";
+import "./Booking.css";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { myContext } from "../../../../App";
@@ -23,8 +24,8 @@ const BookingListMain = () => {
   }, []);
 
   return (
-    <main className="dashboardMain">
-      <div className="dashboardMenu d-flex justify-content-between">
+    <main className="">
+      <div className="desMenu d-flex justify-content-between">
         <div>
           <h2>Your Booked List</h2>
         </div>
@@ -32,7 +33,7 @@ const BookingListMain = () => {
           <img src={logInUser.photoURL} alt="" />
         </div>
       </div>
-      <div>
+      <div className="container-fluid bookingMain">
         <div className="row">
           {userOrder.map((userOrder, i) => (
             <BookingCard key={i + 1} userOrder={userOrder}></BookingCard>
