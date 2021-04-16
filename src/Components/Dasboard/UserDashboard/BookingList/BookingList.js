@@ -1,9 +1,9 @@
 import React from "react";
-import "./UserDashboard.css";
-import Sidebar from "../../Common/Sidebar/Sidebar";
-import DashboardMain from "./DashboardMain/DashboardMain";
+import Sidebar from "../../../Common/Sidebar/Sidebar";
+import UserReviewMain from "../UserReview/UserReviewMain";
+import BookingListMain from "./BookingListMain";
 
-const Dashboard = () => {
+const BookingList = () => {
   return (
     <section className="dashboard">
       <div className="">
@@ -12,7 +12,7 @@ const Dashboard = () => {
             <Sidebar />
           </div>
           <div className="col-md-10 p-0">
-            <DashboardMain />
+            <BookingListMain />
           </div>
         </div>
       </div>
@@ -20,4 +20,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default BookingList;

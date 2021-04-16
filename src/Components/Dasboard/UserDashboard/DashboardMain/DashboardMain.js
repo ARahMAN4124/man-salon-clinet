@@ -3,8 +3,16 @@ import { useContext } from "react";
 import { myContext } from "../../../../App";
 import "./DashboardMain.css";
 import BookingForm from "./BookingForm";
+import PayForm from "../PayForm/PayForm";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
-const DashboardMain = () => {
+const stripePromise = loadStripe(
+  "pk_test_51IfTqWDWHpMdIYYVcomyFkcyrlQW5OVTG97kTQCmNdEGRkxJYWPYE5k9KuElDwOawUMNnHIouSjtCU6XvgKEHyiw00sFVxAADQ"
+);
+
+const DashboardMain = ({ OneServiceDetails }) => {
   const [logInUser, setLogInUser] = useContext(myContext);
 
   return (
@@ -13,12 +21,18 @@ const DashboardMain = () => {
         <div>
           <h2>Booking</h2>
         </div>
-        <div className="logInUserImg mr-5">
+        <div className="logInUserImg me-4">
           <img src={logInUser.photoURL} alt="" />
         </div>
       </div>
-      <div>
-        <BookingForm />
+      <div className="mt-5 ms-4">
+        <div className="paymentCard">
+          <Elements stripe={stripePromise}>
+            <CardElement />
+          </Elements>
+          {/* <PayForm /> */}
+        </div>
+        <BookingForm OneServiceDetails={OneServiceDetails} />
       </div>
     </main>
   );

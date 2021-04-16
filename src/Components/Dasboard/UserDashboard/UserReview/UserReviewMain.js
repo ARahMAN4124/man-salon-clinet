@@ -11,7 +11,7 @@ const UserReviewMain = () => {
         <div>
           <h2>Add Review</h2>
         </div>
-        <div className="logInUserImg mr-5">
+        <div className="logInUserImg me-4">
           <img src={logInUser.photoURL} alt="" />
         </div>
       </div>

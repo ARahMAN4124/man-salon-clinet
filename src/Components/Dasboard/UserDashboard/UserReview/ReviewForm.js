@@ -110,7 +110,7 @@ const ReviewForm = () => {
             </div>
           </div>
 
-          <div className="text-right">
+          <div className="text-end">
             <button
               disabled={!tesImg}
               type="submit"

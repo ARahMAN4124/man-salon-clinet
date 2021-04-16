@@ -33,7 +33,7 @@ const LogIn = () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
+        alert(errorMessage);
       });
   };
 
@@ -54,7 +54,7 @@ const LogIn = () => {
             <Link onClick={logInWithGoogle} className="second-btn py-3">
               <img
                 src={icon}
-                className="mr-5"
+                className="me-5"
                 style={{ width: "30px" }}
                 alt=""
               />

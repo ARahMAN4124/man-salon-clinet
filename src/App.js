@@ -5,10 +5,12 @@ import ServicePage from "./Components/ServicePage/Service/ServicePage";
 import LogIn from "./Components/LogIn/LogIn/LogIn";
 import { createContext, useState } from "react";
 import PrivateRoute from "./Components/LogIn/PrivateRoute/PrivateRoute";
-import Dashboard from "./Components/Dasboard/UserDashboard/UserDashborad";
 import UserReview from "./Components/Dasboard/UserDashboard/UserReview/UserReview";
 import AdminDashBoard from "./Components/Dasboard/AdminDashboard/AddAmin/AdminDashBoard";
 import AddAdmin from "./Components/Dasboard/AdminDashboard/AddAmin/AddAdmin";
+import BookingService from "./Components/Dasboard/UserDashboard/BookingService";
+import OrderList from "./Components/Dasboard/AdminDashboard/OrderList/OrderList";
+import BookingList from "./Components/Dasboard/UserDashboard/BookingList/BookingList";
 
 export const myContext = createContext();
 
@@ -21,23 +23,35 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/service">
+          <Route exact path="/service">
             <ServicePage />
-          </PrivateRoute>
+          </Route>
           <Route path="/logIn">
             <LogIn />
           </Route>
-          <PrivateRoute path="/dashboard">
-            <Dashboard />
-          </PrivateRoute>
-          <PrivateRoute path="/review">
+          <Route path="/orderList">
+            <OrderList />
+          </Route>
+          <Route path="/review">
             <UserReview />
+          </Route>
+          <Route path="/addAdmin">
+            <AddAdmin />
+          </Route>
+          <PrivateRoute path="/bookingList">
+            <BookingList />
+          </PrivateRoute>
+          <PrivateRoute path="/BookingService/:id">
+            <BookingService />
+          </PrivateRoute>
+          <PrivateRoute path="/BookingService/:id">
+            <BookingService />
+          </PrivateRoute>
+          <PrivateRoute path="/BookingService">
+            <BookingService />
           </PrivateRoute>
           <PrivateRoute path="/adminDashboard">
             <AdminDashBoard />
-          </PrivateRoute>
-          <PrivateRoute path="/addAdmin">
-            <AddAdmin />
           </PrivateRoute>
         </Switch>
       </Router>

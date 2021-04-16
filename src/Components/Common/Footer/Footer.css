@@ -1,0 +1,9 @@
+.footer {
+  background-color: rgba(41, 41, 41, 0.918);
+}
+.footerMenu {
+  color: #ffffff;
+}
+.footerMenu:hover {
+  color: rgb(230, 130, 0);
+}

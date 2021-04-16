@@ -4,18 +4,36 @@ import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import { myContext } from "../../../App";
 import mainLogo from "../../../image/icons8-barbershop-100.png";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Menubar = () => {
   const [logInUser, setLogInUser] = useContext(myContext);
+  const [isAdmin, SetIsAdmin] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:5050/admins", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(logInUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        SetIsAdmin(data);
+      });
+  }, [logInUser]);
+
   return (
-    <div>
+    <nav className="container">
       <Navbar expand="lg" className="menubar fixed-top">
-        <Link to="/" className="text-light navbar-brand">
-          <img src={mainLogo} className="w-50" alt="" />
+        <Link to="/" className="text-light navbar-brand ">
+          <img src={mainLogo} className="w-50 ms-4" alt="" />
         </Link>
         <Navbar.Toggle />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ms-auto me-4">
             <Link to="/" className="text-light nav-link">
               Home
             </Link>
@@ -25,7 +43,10 @@ const Menubar = () => {
             <Link className="text-light nav-link">About</Link>
             <Link className="text-light nav-link">Blog</Link>
             {logInUser.email ? (
-              <Link to="/dashboard" className="logInUserImg">
+              <Link
+                to={isAdmin ? "/adminDashboard" : "/bookingList"}
+                className="logInUserImg"
+              >
                 <img src={logInUser.photoURL} alt="" />
               </Link>
             ) : (
@@ -36,7 +57,7 @@ const Menubar = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </div>
+    </nav>
   );
 };
 

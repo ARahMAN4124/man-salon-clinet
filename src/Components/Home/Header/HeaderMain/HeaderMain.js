@@ -6,7 +6,7 @@ import homeHeaderImg from "../../../../image/pexels-photo-3998421.jpeg";
 const HeaderMain = () => {
   return (
     <header className="homeHeader py-5">
-      <div className="container-fluid">
+      <div className="container-fluid pt-5">
         <div className="row mx-5 d-flex align-items-center">
           <div className="col-md-6">
             <h1 className="main-text display-4" style={{ fontFamily: "Times" }}>

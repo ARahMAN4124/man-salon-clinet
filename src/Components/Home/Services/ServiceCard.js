@@ -22,7 +22,7 @@ const ServiceCard = ({ service }) => {
             </div>
           </div>
           <p className="card-text">{description}</p>
-          <Link to="/service" className="second-btn">
+          <Link to={`/BookingService/${service._id}`} className="second-btn">
             Get Now
           </Link>
         </div>

@@ -1,17 +1,11 @@
 import React from "react";
-import { useState } from "react";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import headerImg from "../../../../image/pexels-photo-3998406.jpeg";
 
 const ServiceHeaderMain = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
   return (
     <header className="serviceHeaderMain py-5">
-      <div className="container-fluid">
+      <div className="container-fluid pt-5">
         <div className="row mx-5 d-flex align-items-center">
           <div className="col-md-6">
             <h1 className="main-text display-4" style={{ fontFamily: "Times" }}>
@@ -28,7 +22,7 @@ const ServiceHeaderMain = () => {
           </div>
           <div className="col-md-6">
             <div className="mt-5">
-              <Calendar onChange={handleDateChange} value={new Date()} />
+              <img src={headerImg} className="img-fluid rounded" alt="" />
             </div>
           </div>
         </div>

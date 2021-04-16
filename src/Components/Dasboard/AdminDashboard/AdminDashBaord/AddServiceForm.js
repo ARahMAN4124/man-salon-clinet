@@ -55,7 +55,7 @@ const AddServiceForm = () => {
     <div className="dashboardOther row">
       <div className="bookingForm col-md-8">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-group row">
+          <div className="form-group row mb-3">
             <div className="col-6">
               <label htmlFor="">Service Title</label>
               <input
@@ -99,7 +99,7 @@ const AddServiceForm = () => {
             ></textarea>
             {errors.description && <span>This field is required</span>}
           </div>
-          <div className="text-right">
+          <div className="text-end">
             <input
               disabled={!imgUrl}
               type="submit"

@@ -11,7 +11,7 @@ const AdminDashboardMain = () => {
         <div>
           <h2>Add Service</h2>
         </div>
-        <div className="logInUserImg mr-5">
+        <div className="logInUserImg me-5">
           <img src={logInUser.photoURL} alt="" />
         </div>
       </div>

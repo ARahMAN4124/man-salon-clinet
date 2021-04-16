@@ -11,3 +11,13 @@
   padding: 3em;
   color: #ffffff;
 }
+.paymentCard {
+  border-radius: 10px;
+  width: 550px;
+  background-color: #ffffff;
+  padding: 2em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}

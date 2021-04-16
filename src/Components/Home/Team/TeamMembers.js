@@ -2,7 +2,7 @@ import React from "react";
 
 const TeamMembers = ({ teamMember, handleTeamMember }) => {
   return (
-    <div className="col-md-4">
+    <div className=" col-4 ">
       <img
         src={teamMember.img}
         onClick={() => handleTeamMember(teamMember)}

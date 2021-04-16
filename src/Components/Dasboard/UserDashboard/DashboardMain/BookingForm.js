@@ -1,20 +1,34 @@
 import React from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import { CardElement } from "@stripe/react-stripe-js";
+import { myContext } from "../../../../App";
 
-const BookingForm = () => {
-  const stripePromise = loadStripe(
-    "pk_test_51IfTqWDWHpMdIYYVcomyFkcyrlQW5OVTG97kTQCmNdEGRkxJYWPYE5k9KuElDwOawUMNnHIouSjtCU6XvgKEHyiw00sFVxAADQ"
-  );
+const BookingForm = ({ OneServiceDetails }) => {
+  const [logInUser, setLogInUser] = useContext(myContext);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    const orderOne = { ...data };
+    orderOne.serviceName = OneServiceDetails.title;
+    orderOne.price = OneServiceDetails.price;
+    orderOne.img = OneServiceDetails.ServiceImg;
+    orderOne.description = OneServiceDetails.description;
+    orderOne.date = new Date();
+    fetch("http://localhost:5050/addOrder", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(orderOne),
+    }).then((res) => {
+      if (res) {
+        alert("Successfully Added Your Order");
+      }
+    });
   };
 
   return (
@@ -24,8 +38,8 @@ const BookingForm = () => {
           <div className="mb-3">
             <input
               type="name"
+              defaultValue={logInUser.displayName}
               className="form-control"
-              value="name"
               {...register("name", { required: true })}
             />
             {errors.name && <span>This field is required</span>}
@@ -33,6 +47,7 @@ const BookingForm = () => {
           <div className="mb-3">
             <input
               type="email"
+              defaultValue={logInUser.email}
               className="form-control"
               {...register("email", { required: true })}
             />
@@ -40,37 +55,29 @@ const BookingForm = () => {
           </div>
           <div className="mb-3">
             <input
-              type="email"
-              value="name"
-              className="form-control"
-              readOnly
+              type="text"
+              defaultValue={
+                OneServiceDetails
+                  ? OneServiceDetails.title
+                  : "Select a service form services"
+              }
               disabled
-              {...register("serviceName", { required: true })}
+              readOnly
+              className="form-control"
+              {...register("serviceName")}
             />
             {errors.serviceName && <span>This field is required</span>}
           </div>
-          <div>
-            <Elements stripe={stripePromise}>
-              <CardElement
-                options={{
-                  style: {
-                    base: {
-                      fontSize: "16px",
-                      color: "#424770",
-                      "::placeholder": {
-                        color: "#aab7c4",
-                      },
-                    },
-                    invalid: {
-                      color: "#9e2146",
-                    },
-                  },
-                }}
-              />
-            </Elements>
-          </div>
-          <div className="mr-0">
-            <input type="submit" value="Get" className="btn-main mr-auto" />
+          <div></div>
+          <div className="text-end">
+            <button
+              disabled={!OneServiceDetails}
+              type="submit"
+              value="Get"
+              className="btn btn-warning"
+            >
+              Buy Now
+            </button>
           </div>
         </form>
       </div>
