@@ -25,7 +25,7 @@ const Service = () => {
             Services
           </h2>
         </div>
-        <div className="row pt-5">
+        <div className="row serviceCard mx-auto pt-5">
           {serviceLoad.map((service, index) => (
             <ServiceCard service={service} key={index + 1}></ServiceCard>
           ))}
