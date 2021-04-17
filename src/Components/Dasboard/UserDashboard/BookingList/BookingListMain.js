@@ -10,7 +10,7 @@ const BookingListMain = () => {
   const [userOrder, setUserOrder] = React.useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5050/orderList", {
+    fetch("https://pure-castle-98884.herokuapp.com/orderList", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

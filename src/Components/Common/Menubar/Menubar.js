@@ -12,7 +12,7 @@ const Menubar = () => {
   const [isAdmin, SetIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5050/admins", {
+    fetch("http://https://pure-castle-98884.herokuapp.com/admins", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

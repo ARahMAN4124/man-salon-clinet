@@ -35,7 +35,7 @@ const ReviewForm = () => {
       img: tesImg,
     };
 
-    fetch("http://localhost:5050/addTestimonial", {
+    fetch("http://https://pure-castle-98884.herokuapp.com/addTestimonial", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

@@ -1,6 +1,5 @@
 import React from "react";
 import Sidebar from "../../../Common/Sidebar/Sidebar";
-import UserReviewMain from "../UserReview/UserReviewMain";
 import BookingListMain from "./BookingListMain";
 
 const BookingList = () => {

@@ -39,7 +39,7 @@ const AddServiceForm = () => {
       description: data.description,
     };
 
-    fetch("http://localhost:5050/addService", {
+    fetch("http://https://pure-castle-98884.herokuapp.com/addService", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
