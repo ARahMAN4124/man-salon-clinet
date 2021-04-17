@@ -8,7 +8,7 @@ const Service = () => {
   const [serviceLoad, setServiceLoad] = useState([]);
 
   useEffect(() => {
-    fetch("http://https://pure-castle-98884.herokuapp.com/services")
+    fetch("https://pure-castle-98884.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => {
         setServiceLoad(data);

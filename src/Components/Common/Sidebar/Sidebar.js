@@ -11,7 +11,7 @@ const Sidebar = () => {
   const [isAdmin, SetIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch("http://https://pure-castle-98884.herokuapp.com/admins", {
+    fetch("https://pure-castle-98884.herokuapp.com/admins", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

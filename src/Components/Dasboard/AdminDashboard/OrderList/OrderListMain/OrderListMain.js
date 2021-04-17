@@ -8,7 +8,7 @@ const OrderListMain = () => {
 
   const [allOrderList, setAllOrderList] = useState([]);
   useEffect(() => {
-    fetch("http://https://pure-castle-98884.herokuapp.com/orderList", {
+    fetch("https://pure-castle-98884.herokuapp.com/orderList", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const BookingService = () => {
   const [OneServiceDetails, setOneServiceDetails] = useState([]);
 
   useEffect(() => {
-    fetch("http://https://pure-castle-98884.herokuapp.com/orderOn", {
+    fetch("https://pure-castle-98884.herokuapp.com/orderOn", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

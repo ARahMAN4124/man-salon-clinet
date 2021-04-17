@@ -8,7 +8,7 @@ const AdAdminForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://https://pure-castle-98884.herokuapp.com/addAdmin", {
+    fetch("https://pure-castle-98884.herokuapp.com/addAdmin", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

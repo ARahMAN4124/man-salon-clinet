@@ -43,7 +43,7 @@ const DashboardMain = ({ OneServiceDetails }) => {
       name: addOrderDetails.name,
     };
 
-    fetch("http://https://pure-castle-98884.herokuapp.com/addOrder", {
+    fetch("https://pure-castle-98884.herokuapp.com/addOrder", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

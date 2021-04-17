@@ -8,7 +8,7 @@ const ClientReview = () => {
   const [testimonialInfo, setTestimonialInfo] = useState([]);
 
   useEffect(() => {
-    fetch("http://https://pure-castle-98884.herokuapp.com/testimonials")
+    fetch("https://pure-castle-98884.herokuapp.com/testimonials")
       .then((res) => res.json())
       .then((data) => {
         setTestimonialInfo(data);
