@@ -11,3 +11,12 @@
   -ms-transform: translateY(-10px);
   -o-transform: translateY(-10px);
 }
+.serviceInfo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}

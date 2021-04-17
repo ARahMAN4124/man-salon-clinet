@@ -6,13 +6,7 @@ const ServiceCard = ({ service }) => {
   return (
     <div className="col-md-4">
       <div className="serviceCard rounded mb-4">
-        <img
-          src={ServiceImg}
-          style={{ height: "250px", width: "100%" }}
-          className="card-img-top img-fluid"
-          alt="card-img"
-        />
-        <div className="card-body">
+        <div className="card-body serviceInfo">
           <div className="card-title d-flex justify-content-between">
             <div>
               <h5>{title}</h5>
@@ -25,6 +19,14 @@ const ServiceCard = ({ service }) => {
           <Link to={`/BookingService/${service._id}`} className="second-btn">
             Get Now
           </Link>
+        </div>
+        <div className="serviceImg">
+          <img
+            src={ServiceImg}
+            style={{ height: "250px", width: "100%" }}
+            className="card-img-top img-fluid"
+            alt="card-img"
+          />
         </div>
       </div>
     </div>
