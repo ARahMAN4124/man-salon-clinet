@@ -35,7 +35,7 @@ const OrderListMain = () => {
       </div>
       <div className="">
         <div className="bookingMain">
-          <table className="table rounded p-2 table-dark table-striped">
+          <table className="table table-dark table-striped">
             <thead>
               <tr className="">
                 <th scope="col">#</th>

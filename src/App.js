@@ -44,9 +44,6 @@ function App() {
           <PrivateRoute path="/BookingService/:id">
             <BookingService />
           </PrivateRoute>
-          <PrivateRoute path="/BookingService/:id">
-            <BookingService />
-          </PrivateRoute>
           <PrivateRoute path="/BookingService">
             <BookingService />
           </PrivateRoute>
