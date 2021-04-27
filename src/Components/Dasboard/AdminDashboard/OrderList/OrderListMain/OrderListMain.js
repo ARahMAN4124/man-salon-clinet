@@ -24,7 +24,7 @@ const OrderListMain = () => {
   const handleStatusChange = (event, id) => {
     const status = event.target.options[event.target.selectedIndex].text;
     const orderStatus = { status, id };
-    fetch(`http://localhost:5050/orderStatus/${id}`, {
+    fetch(`https://pure-castle-98884.herokuapp.com/orderStatus/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

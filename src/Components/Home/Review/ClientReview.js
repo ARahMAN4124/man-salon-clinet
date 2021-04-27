@@ -2,8 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./ClientReview.css";
-import Rating from "@material-ui/lab/Rating";
-import Box from "@material-ui/core/Box";
 import ReviewCarousel from "./ReviewCarousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";

@@ -15,7 +15,7 @@ const ServiceManageMain = () => {
   }, [logInUser]);
 
   const handleServiceDelete = (id) => {
-    fetch(`http://localhost:5050/deletedService/` + id, {
+    fetch(`https://pure-castle-98884.herokuapp.com/deletedService/` + id, {
       method: "DELETE",
     })
       .then((res) => res.json())
