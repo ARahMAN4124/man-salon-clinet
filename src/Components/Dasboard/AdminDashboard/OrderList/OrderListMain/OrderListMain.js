@@ -2,10 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { myContext } from "../../../../../App";
+import { useForm } from "react-hook-form";
 
 const OrderListMain = () => {
   const [logInUser, setLogInUser] = useContext(myContext);
-
   const [allOrderList, setAllOrderList] = useState([]);
   useEffect(() => {
     fetch("https://pure-castle-98884.herokuapp.com/orderList", {
@@ -21,13 +21,29 @@ const OrderListMain = () => {
       });
   }, [logInUser]);
 
-  console.log(allOrderList);
+  const handleStatusChange = (event, id) => {
+    const status = event.target.options[event.target.selectedIndex].text;
+    const orderStatus = { status, id };
+    fetch(`http://localhost:5050/orderStatus/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orderStatus),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          alert("Order Status Update Successfully");
+        }
+      });
+  };
 
   return (
     <main className="">
       <div className="d-flex desMenu justify-content-between">
         <div>
-          <h2 className="">Add Service</h2>
+          <h2 className="">Order List</h2>
         </div>
         <div className="logInUserImg me-5">
           <img src={logInUser.photoURL} alt="" />
@@ -53,8 +69,23 @@ const OrderListMain = () => {
                   <td>{orderList.name}</td>
                   <td>{orderList.email}</td>
                   <td>{orderList.serviceName}</td>
-                  <td>Creadit Card</td>
-                  <td className="text-success">Done</td>
+                  <td>Credit Card</td>
+                  <td className="text-success">
+                    <form
+                      onChange={(event) =>
+                        handleStatusChange(event, orderList._id)
+                      }
+                    >
+                      <div>
+                        <select class="form-select btn btn-warning">
+                          <option selected>{orderList.status}</option>
+                          <option value="Done">Done</option>
+                          <option value="Pending">Pending</option>
+                          <option value="On going">On going</option>
+                        </select>
+                      </div>
+                    </form>
+                  </td>
                 </tr>
               ))}
             </tbody>

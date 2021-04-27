@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
 
 const ServiceCard = ({ service }) => {
-  const { title, description, ServiceImg, price } = service;
+  const { title, ServiceImg, price } = service;
+  AOS.init({
+    duration: 10000,
+  });
 
   return (
     <div className="col-md-3">
@@ -12,7 +16,12 @@ const ServiceCard = ({ service }) => {
           className="cardHover d-flex align-items-center justify-content-center"
         >
           <div className="cardImg">
-            <img src={ServiceImg} className="img-fluid" alt="" />
+            <img
+              src={ServiceImg}
+              data-aos="fade-right"
+              className="img-fluid"
+              alt=""
+            />
 
             <div className="">
               <div className="hoverStyle d-flex align-items-center justify-content-center">
@@ -25,29 +34,6 @@ const ServiceCard = ({ service }) => {
           </div>
         </Link>
       </div>
-
-      {/* <div className="serviceCard card rounded mb-4">
-        <img
-          src={ServiceImg}
-          style={{ height: "250px", width: "100%" }}
-          className="card-img-top img-fluid"
-          alt="card-img"
-        />
-        <div className="card-body serviceInfo">
-          <div className="card-title d-flex justify-content-between">
-            <div>
-              <h5>{title}</h5>
-            </div>
-            <div>
-              <h6 className="main-text">$ {price}</h6>
-            </div>
-          </div>
-          <p className="card-text">{description}</p>
-          <Link to={`/BookingService/${service._id}`} className="second-btn">
-            Get Now
-          </Link>
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -9,3 +9,14 @@
   background-attachment: fixed;
   background-position: center;
 }
+.testimonialCard {
+  width: 500px;
+  margin: 0 auto;
+  background-color: rgba(59, 59, 59, 0.424);
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}

@@ -88,7 +88,6 @@ const ContactUsForm = () => {
               cols="30"
               rows="10"
             ></textarea>
-
             <label for="floatingInput" className="ms-2">
               Enter Message
             </label>

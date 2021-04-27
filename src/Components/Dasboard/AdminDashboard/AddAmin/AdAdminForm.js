@@ -17,8 +17,6 @@ const AdAdminForm = () => {
     }).then((res) => {
       console.log(res);
     });
-
-    console.log(data);
     alert("A Admin Added Successfully");
   };
   return (

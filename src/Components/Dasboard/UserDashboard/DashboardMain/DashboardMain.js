@@ -37,11 +37,14 @@ const DashboardMain = ({ OneServiceDetails }) => {
       price: OneServiceDetails.price,
       img: OneServiceDetails.ServiceImg,
       paymentCardId: paymentID,
+      status: "Pending",
       description: OneServiceDetails.description,
       date: new Date(),
       email: addOrderDetails.email,
       name: addOrderDetails.name,
     };
+
+    console.log(orderOne);
 
     fetch("https://pure-castle-98884.herokuapp.com/addOrder", {
       method: "POST",

@@ -22,7 +22,7 @@ const Sidebar = () => {
       .then((data) => {
         SetIsAdmin(data);
       });
-  }, [logInUser]);
+  }, []);
 
   return (
     <section className="sidebar">
@@ -50,7 +50,9 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="nav-item pt-2">
-              <Link className="nav-link text-light">Manage Services</Link>
+              <Link to="/ServiceManage" className="nav-link text-light">
+                Manage Services
+              </Link>
             </li>
           </ul>
         </div>
